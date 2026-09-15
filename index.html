@@ -489,6 +489,36 @@
     .info-card h3 { margin-bottom: 8px; }
     .info-card p { color: var(--muted); }
 
+    .language-skills {
+      display: grid;
+      gap: 9px;
+      margin-top: 10px;
+    }
+
+    .language-line {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+    }
+
+    .language-label {
+      min-width: 86px;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .n3-highlight {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 7px;
+      background: rgba(15,118,110,.10);
+      color: var(--accent-2);
+      font-weight: 900;
+      letter-spacing: .01em;
+    }
+
     .contact {
       background: var(--surface);
       border-top: 1px solid var(--line);
@@ -647,7 +677,7 @@
             <li><strong>Location</strong><span>Tang Nhon Phu W, Ho Chi Minh City</span></li>
             <li><strong>Experience</strong><span>Senior QA, Corsair Marine International</span></li>
             <li><strong>Education</strong><span>Bachelor of Law, Open University of HCM City</span></li>
-            <li><strong>Credentials</strong><span>ISO 9001 Internal Auditor, Japanese N4, N3 in progress</span></li>
+            <li><strong>Credentials</strong><span>ISO 9001 Internal Auditor, Japanese N4, <span class="n3-highlight">N3 in progress</span></span></li>
           </ul>
         </aside>
       </div>
@@ -1142,10 +1172,16 @@
 
           <article class="info-card">
             <h3>Language Skills</h3>
-            <p>
-              Vietnamese native speaker. English: good. Japanese: intermediate,
-              with N4 listed from 2025 and N3 currently in progress.
-            </p>
+            <div class="language-skills">
+              <div class="language-line">
+                <span class="language-label">English</span>
+                <span>Good</span>
+              </div>
+              <div class="language-line">
+                <span class="language-label">Japanese</span>
+                <span>Intermediate &middot; N4 (2025) &middot; <span class="n3-highlight">N3 in progress</span></span>
+              </div>
+            </div>
           </article>
 
           <article class="info-card">
