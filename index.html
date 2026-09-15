@@ -17,8 +17,26 @@
       --accent: #164e63;
       --accent-2: #0f766e;
       --shadow: 0 16px 40px rgba(20, 35, 50, 0.08);
+      --nav-bg: rgba(255,255,255,.94);
+      --metrics-bg: #164e63;
+      --on-accent: #ffffff;
       --radius: 18px;
       --max: 1180px;
+    }
+
+    body.dark-mode {
+      --bg: #0f1720;
+      --surface: #16212b;
+      --surface-2: #1d2b36;
+      --text: #edf4f7;
+      --muted: #a9b7c2;
+      --line: #2b3b47;
+      --accent: #7dd3c7;
+      --accent-2: #4fd1c5;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      --nav-bg: rgba(22,33,43,.94);
+      --metrics-bg: #123f46;
+      --on-accent: #0b2529;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,6 +48,21 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.65;
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    body,
+    nav,
+    .profile-card,
+    .expertise-card,
+    .project,
+    .credential-card,
+    .info-card,
+    .tool,
+    .eyebrow,
+    .contact,
+    .experience {
+      transition: background-color .25s ease, color .25s ease, border-color .25s ease;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -43,7 +76,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255,255,255,.94);
+      background: var(--nav-bg);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
@@ -72,6 +105,45 @@
     }
 
     .nav-links a:hover { color: var(--accent); }
+
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 0 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font: inherit;
+      font-size: .86rem;
+      font-weight: 750;
+      cursor: pointer;
+      transition: transform .2s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+    }
+
+    .theme-toggle-icon {
+      width: 18px;
+      height: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      line-height: 1;
+    }
 
     .hero {
       min-height: 720px;
@@ -151,7 +223,7 @@
 
     .btn-primary {
       background: var(--accent);
-      color: white;
+      color: var(--on-accent);
     }
 
     .btn-primary:hover {
@@ -395,7 +467,7 @@
     }
 
     .metrics {
-      background: var(--accent);
+      background: var(--metrics-bg);
       color: white;
     }
 
@@ -413,7 +485,7 @@
 
     .metric {
       padding: 32px 25px;
-      background: var(--accent);
+      background: var(--metrics-bg);
     }
 
     .metric strong {
@@ -592,6 +664,10 @@
       .nav-inner { min-height: 62px; }
       .nav-links { display: none; }
 
+      .nav-actions { margin-left: auto; }
+      .theme-toggle { padding: 0 11px; }
+      .theme-toggle-text { display: none; }
+
       section { padding: 75px 0; }
       .hero { padding: 65px 0; }
       h1 { font-size: 3rem; }
@@ -620,7 +696,7 @@
     @media print {
       nav { position: static; }
       .hero { min-height: auto; }
-      .btn { display: none; }
+      .btn, .theme-toggle { display: none; }
       section { padding: 45px 0; }
       body { background: white; }
     }
@@ -632,14 +708,20 @@
   <nav>
     <div class="container nav-inner">
       <a href="#top" class="brand">KIEU PHAM</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#credentials">Credentials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-actions">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-toggle-icon" id="themeToggleIcon" aria-hidden="true">☾</span>
+          <span class="theme-toggle-text" id="themeToggleText">Dark</span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -1174,6 +1256,10 @@
             <h3>Language Skills</h3>
             <div class="language-skills">
               <div class="language-line">
+                <span class="language-label">Vietnamese</span>
+                <span>Native</span>
+              </div>
+              <div class="language-line">
                 <span class="language-label">English</span>
                 <span>Good</span>
               </div>
@@ -1223,6 +1309,35 @@
       <span>QMS-QA-Process Improvement &middot; PFMEA &middot; Power BI</span>
     </div>
   </footer>
+
+
+  <script>
+    (function () {
+      const body = document.body;
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeToggleIcon');
+      const text = document.getElementById('themeToggleText');
+      const storageKey = 'portfolio-theme';
+
+      function applyTheme(theme) {
+        const isDark = theme === 'dark';
+        body.classList.toggle('dark-mode', isDark);
+        toggle.setAttribute('aria-pressed', String(isDark));
+        toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        icon.textContent = isDark ? '☀' : '☾';
+        text.textContent = isDark ? 'Light' : 'Dark';
+      }
+
+      const savedTheme = localStorage.getItem(storageKey) || 'light';
+      applyTheme(savedTheme);
+
+      toggle.addEventListener('click', function () {
+        const nextTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+        localStorage.setItem(storageKey, nextTheme);
+        applyTheme(nextTheme);
+      });
+    })();
+  </script>
 
 </body>
 </html>
