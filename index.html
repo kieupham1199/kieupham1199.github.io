@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Senior QA Officer Portfolio — Quality Assurance, QMS, ISO 9001, PFMEA, CAPA, QC tools, document control and data-driven quality improvement." />
-  <title>Senior QA Officer | Quality Assurance Portfolio</title>
+  <meta name="description" content="Pham Thi Ngan Kieu portfolio - QMS-QA-Process Improvement profile with experience in QA/QMS, PFMEA, CAPA, Control Plan, root cause analysis, Power BI quality dashboards, process audits and document control." />
+  <title>Pham Thi Ngan Kieu | QMS-QA-Process Improvement</title>
 
   <style>
     :root {
@@ -39,7 +39,6 @@
       margin: auto;
     }
 
-    /* Navigation */
     nav {
       position: sticky;
       top: 0;
@@ -74,7 +73,6 @@
 
     .nav-links a:hover { color: var(--accent); }
 
-    /* Hero */
     .hero {
       min-height: 720px;
       display: grid;
@@ -176,17 +174,16 @@
       box-shadow: var(--shadow);
     }
 
-    .profile-mark {
-      width: 110px;
-      height: 110px;
-      display: grid;
-      place-items: center;
-      border-radius: 24px;
-      background: var(--surface-2);
-      color: var(--accent);
-      font-size: 2rem;
-      font-weight: 900;
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      display: block;
       margin-bottom: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 8px solid var(--surface-2);
+      box-shadow: 0 12px 28px rgba(20, 35, 50, 0.12);
     }
 
     .profile-card h2 { font-size: 1.35rem; margin-bottom: 8px; }
@@ -211,7 +208,6 @@
     .profile-list strong { color: var(--text); }
     .profile-list span { color: var(--muted); text-align: right; }
 
-    /* General sections */
     section { padding: 105px 0; }
 
     .section-header {
@@ -241,7 +237,6 @@
       max-width: 760px;
     }
 
-    /* Expertise */
     .expertise-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -271,7 +266,6 @@
     .expertise-card h3 { margin-bottom: 9px; font-size: 1.1rem; }
     .expertise-card p { color: var(--muted); font-size: .93rem; }
 
-    /* Experience */
     .experience {
       background: var(--surface);
       border-top: 1px solid var(--line);
@@ -311,7 +305,6 @@
 
     .timeline-content li { margin: 7px 0; }
 
-    /* Projects */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -337,6 +330,7 @@
       color: var(--accent-2);
       font-size: .78rem;
       font-weight: 900;
+      white-space: nowrap;
     }
 
     .project h3 { font-size: 1.3rem; }
@@ -362,7 +356,44 @@
       font-weight: 750;
     }
 
-    /* Metrics */
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .credential-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(20, 35, 50, 0.06);
+    }
+
+    .credential-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10.5;
+      object-fit: cover;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .credential-body {
+      padding: 24px;
+    }
+
+    .credential-body h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .credential-body p {
+      color: var(--muted);
+      font-size: .94rem;
+      margin-bottom: 18px;
+    }
+
     .metrics {
       background: var(--accent);
       color: white;
@@ -395,7 +426,6 @@
 
     .metric span { color: rgba(255,255,255,.7); font-size: .9rem; }
 
-    /* Skills */
     .skills-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -407,6 +437,7 @@
     .skill-head {
       display: flex;
       justify-content: space-between;
+      gap: 16px;
       margin-bottom: 7px;
       font-weight: 750;
       font-size: .92rem;
@@ -442,7 +473,6 @@
       color: var(--muted);
     }
 
-    /* Education / certificates */
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -459,7 +489,6 @@
     .info-card h3 { margin-bottom: 8px; }
     .info-card p { color: var(--muted); }
 
-    /* Contact */
     .contact {
       background: var(--surface);
       border-top: 1px solid var(--line);
@@ -490,12 +519,14 @@
       min-width: 280px;
     }
 
-    .contact-details a {
+    .contact-details a,
+    .contact-details span {
       padding: 13px 16px;
       border: 1px solid var(--line);
       border-radius: 10px;
       color: var(--accent);
       font-weight: 700;
+      overflow-wrap: anywhere;
     }
 
     footer {
@@ -511,7 +542,6 @@
       gap: 20px;
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
       .hero-grid,
       .section-header,
@@ -534,11 +564,12 @@
 
       section { padding: 75px 0; }
       .hero { padding: 65px 0; }
-      h1 { font-size: 3.1rem; }
+      h1 { font-size: 3rem; }
 
       .expertise-grid,
       .projects-grid,
       .two-col,
+      .credentials-grid,
       .metrics-grid {
         grid-template-columns: 1fr;
       }
@@ -548,6 +579,7 @@
         gap: 8px;
       }
 
+      .project-top { flex-direction: column; gap: 6px; }
       .metric strong { font-size: 2.3rem; }
 
       footer .container {
@@ -567,15 +599,15 @@
 
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
     <div class="container nav-inner">
-      <a href="#top" class="brand">QA / QUALITY</a>
+      <a href="#top" class="brand">KIEU PHAM</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#credentials">Credentials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -583,56 +615,56 @@
 
   <main id="top">
 
-    <!-- HERO -->
     <header class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Senior QA Officer Portfolio</div>
+          <div class="eyebrow">QMS-QA-Process Improvement</div>
 
           <h1>
-            Quality built through
-            <span>systems, data & discipline.</span>
+            Pham Thi Ngan Kieu
+            <span>builds clearer systems, documents and improvement workflows.</span>
           </h1>
 
           <p class="hero-lead">
-            QA/QC professional focused on quality assurance, QMS improvement,
-            ISO 9001 alignment, document control, risk-based quality tools,
-            corrective action and data-driven reporting in yacht manufacturing.
+            Quality-focused professional with hands-on experience in QA/QMS,
+            process improvement and data analytics. Experienced in refining
+            processes, developing quality systems and turning quality data into
+            practical insights through Power BI.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-primary" href="#experience">View Experience</a>
             <a class="btn btn-secondary" href="#contact">Contact Me</a>
           </div>
         </div>
 
         <aside class="profile-card">
-          <div class="profile-mark">QA</div>
-          <h2>Senior QA Officer</h2>
-          <p>Quality Assurance · QMS · Continuous Improvement</p>
+          <img class="profile-photo" src="https://drive.google.com/thumbnail?id=151JWuealuFl2z4sUIh3yBUiM2uzZutrH&amp;sz=w800" alt="Portrait of Pham Thi Ngan Kieu" />
+          <h2>QMS-QA-Process Improvement</h2>
+          <p>QMS &middot; QA &middot; Process Improvement &middot; Data Analytics</p>
 
           <ul class="profile-list">
-            <li><strong>Industry</strong><span>Yacht Manufacturing</span></li>
-            <li><strong>Focus</strong><span>QA / QC Systems</span></li>
-            <li><strong>Methods</strong><span>PFMEA · CAPA · 7 QC</span></li>
-            <li><strong>Data</strong><span>Excel · Power BI · SQL</span></li>
+            <li><strong>Location</strong><span>Tang Nhon Phu W, Ho Chi Minh City</span></li>
+            <li><strong>Experience</strong><span>Senior QA, Corsair Marine International</span></li>
+            <li><strong>Education</strong><span>Bachelor of Law, Open University of HCM City</span></li>
+            <li><strong>Credentials</strong><span>ISO 9001 Internal Auditor, Japanese N4, N3 in progress</span></li>
           </ul>
         </aside>
       </div>
     </header>
 
-    <!-- ABOUT -->
     <section id="about">
       <div class="container">
         <div class="section-header">
           <div class="section-number">01 / About</div>
           <div>
-            <h2 class="section-title">Turning quality requirements into practical control.</h2>
+            <h2 class="section-title">Quality systems, process control and data-driven improvement.</h2>
             <p class="section-intro" style="margin-top:20px;">
-              My approach combines hands-on QA/QC coordination with structured
-              documentation, risk analysis and quality data. I focus on making
-              quality processes easier to understand, monitor and sustain across
-              production stages.
+              I coordinate with quality management and cross-functional teams to
+              refine processes, develop quality systems, standardize workflows
+              and convert quality data into management-ready insights. My work
+              combines document control, PFMEA, CAPA, Control Plan, root cause
+              analysis, on-site audits and Power BI reporting.
             </p>
           </div>
         </div>
@@ -640,71 +672,74 @@
         <div class="expertise-grid">
           <article class="expertise-card">
             <div class="icon">01</div>
-            <h3>Quality Assurance</h3>
+            <h3>QA/QMS Development</h3>
             <p>
-              Establishing practical controls, monitoring defects, supporting
-              production teams and following quality issues through close-out.
+              Support quality system development through controlled
+              documentation, standardized workflows, process monitoring and
+              cross-functional coordination.
             </p>
           </article>
 
           <article class="expertise-card">
             <div class="icon">02</div>
-            <h3>QMS & ISO 9001</h3>
+            <h3>Document Control</h3>
             <p>
-              Supporting document control, process consistency, records and
-              continuous improvement aligned with ISO 9001 principles.
+              Manage quality documentation, master lists, revisions, change
+              control records and traceability for controlled quality processes.
             </p>
           </article>
 
           <article class="expertise-card">
             <div class="icon">03</div>
-            <h3>Risk-Based Quality</h3>
+            <h3>Risk & Problem Solving</h3>
             <p>
-              Applying PFMEA, RPN analysis and preventive controls to identify
-              recurring or higher-risk quality problems.
+              Use PFMEA, CAPA, Control Plan, 5 Why, Ishikawa and Pareto Chart
+              methods to identify risks, root causes and practical corrective
+              actions.
             </p>
           </article>
 
           <article class="expertise-card">
             <div class="icon">04</div>
-            <h3>Problem Solving</h3>
+            <h3>Quality Data Analytics</h3>
             <p>
-              Using Pareto, Fishbone, 5 Whys, CAPA and structured root-cause
-              analysis to move from defects to sustainable actions.
+              Develop quality reports and Power BI dashboards for KPI tracking,
+              production performance monitoring and management decision support.
             </p>
           </article>
 
           <article class="expertise-card">
             <div class="icon">05</div>
-            <h3>Document Control</h3>
+            <h3>Process Audits</h3>
             <p>
-              Improving revision tracking, document transition, records
-              management and controlled communication of changes.
+              Conduct on-site audits to verify document compliance, process
+              effectiveness and consistent application of quality requirements.
             </p>
           </article>
 
           <article class="expertise-card">
             <div class="icon">06</div>
-            <h3>Quality Data</h3>
+            <h3>Process Improvement</h3>
             <p>
-              Converting inspection and defect records into useful KPI reports,
-              dashboards and management-level quality insights.
+              Lead short-term improvement projects and standardize quality
+              reporting through quarterly reports, flowcharts and quality tools
+              training.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience" class="experience">
       <div class="container">
         <div class="section-header">
           <div class="section-number">02 / Experience</div>
           <div>
-            <h2 class="section-title">Experience that connects the factory floor with the QMS.</h2>
+            <h2 class="section-title">Experience across QA/QMS, process improvement and project administration.</h2>
             <p class="section-intro" style="margin-top:20px;">
-              Replace the placeholders below with your exact company name,
-              employment dates and verified achievements from your CV.
+              Professional history from senior QA work in yacht manufacturing
+              to project administration with documentation, reporting and ERP
+              data control.
             </p>
           </div>
         </div>
@@ -712,30 +747,35 @@
         <div class="timeline">
 
           <article class="timeline-item">
-            <div class="date">Current Role</div>
+            <div class="date">2023 - 2026</div>
             <div class="timeline-content">
-              <h3>Senior QA Officer</h3>
-              <div class="company">Yacht Manufacturing Company · QA/QC Department</div>
+              <h3>Senior QA</h3>
+              <div class="company">Corsair Marine International</div>
               <ul>
-                <li>Coordinate QA activities and quality monitoring across multiple yacht production stages.</li>
-                <li>Support QA/QC management with quality reporting, issue tracking and improvement activities.</li>
-                <li>Maintain and improve controlled quality documents, records and revision tracking.</li>
-                <li>Analyze defect data and identify repeat issues, trends and opportunities for preventive action.</li>
-                <li>Work with QC Supervisors, Leaders and Production teams to support timely defect close-out.</li>
+                <li>Manage quality documentation, master lists, revisions, change control and records.</li>
+                <li>Support quality improvement through PFMEA, CAPA, Control Plan and root cause analysis.</li>
+                <li>Develop quality reports and Power BI dashboards to support management decisions.</li>
+                <li>Conduct on-site audits to verify document compliance and process effectiveness.</li>
+                <li>Coordinate with cross-functional teams to standardize quality processes.</li>
+                <li>Led a 5-member team on short-term projects including P-FMEA, 7 QC tools, Control Plan and Acceptance Quality Level.</li>
+                <li>Reduced overall major defect rate from 20% to 10% through improvement projects.</li>
               </ul>
             </div>
           </article>
 
           <article class="timeline-item">
-            <div class="date">Previous Experience</div>
+            <div class="date">2021 - 2023</div>
             <div class="timeline-content">
-              <h3>QA / QC Officer</h3>
-              <div class="company">Yacht Manufacturing Environment</div>
+              <h3>Project Administrator</h3>
+              <div class="company">Vong Xanh Corp</div>
               <ul>
-                <li>Performed QA monitoring and supported QC inspection activities throughout production.</li>
-                <li>Prepared quality reports and maintained inspection records and supporting documentation.</li>
-                <li>Participated in root-cause analysis and corrective/preventive action activities.</li>
-                <li>Supported internal quality audits and follow-up of quality findings.</li>
+                <li>Processed, managed and archived documents, contracts and official correspondence.</li>
+                <li>Handled administrative procedures for fire safety, business location registration, licensing, utility and food safety matters.</li>
+                <li>Prepared monthly and quarterly cost and maintenance reports.</li>
+                <li>Coordinated payment requests for repairs, maintenance, projects and operating expenses.</li>
+                <li>Managed stationery procurement and inventory on a monthly and quarterly basis.</li>
+                <li>Coordinated construction project registration, deposits, completion and refunds with building management boards.</li>
+                <li>Managed project tools and equipment and ensured accurate ERP data entry across stores.</li>
               </ul>
             </div>
           </article>
@@ -744,16 +784,15 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
+    <section id="work">
       <div class="container">
         <div class="section-header">
-          <div class="section-number">03 / Selected Projects</div>
+          <div class="section-number">03 / Work Focus</div>
           <div>
-            <h2 class="section-title">Quality projects with measurable purpose.</h2>
+            <h2 class="section-title">Quality projects with measurable improvement.</h2>
             <p class="section-intro" style="margin-top:20px;">
-              A selection of practical QA/QC improvement work. Replace or expand
-              these cards with your preferred portfolio evidence.
+              These areas summarize the QA/QMS responsibilities, improvement
+              projects and technical strengths listed in the corrected CV.
             </p>
           </div>
         </div>
@@ -762,108 +801,101 @@
 
           <article class="project">
             <div class="project-top">
-              <h3>PFMEA Implementation</h3>
+              <h3>PFMEA & Quality Risk Projects</h3>
               <div class="project-no">PROJECT 01</div>
             </div>
             <p>
-              Led a PFMEA pilot and developed a structured approach to evaluate
-              Severity, Occurrence and Detection. The project moved toward a
-              recurring review model based on actual quality data.
+              Led short-term improvement projects including P-FMEA and risk
+              review work with a 5-member team, supporting preventive action and
+              more structured quality control.
             </p>
             <div class="tags">
               <span class="tag">PFMEA</span>
-              <span class="tag">RPN</span>
-              <span class="tag">Risk Analysis</span>
+              <span class="tag">Risk Review</span>
               <span class="tag">Preventive Action</span>
             </div>
           </article>
 
           <article class="project">
             <div class="project-top">
-              <h3>7 QC Tools</h3>
+              <h3>Major Defect Reduction</h3>
               <div class="project-no">PROJECT 02</div>
             </div>
             <p>
-              Built a practical quality-analysis workflow using Check Sheet,
-              Pareto, Fishbone and 5 Whys to identify repeat defects and support
-              structured corrective actions.
+              Applied quality tools and process improvement methods to reduce
+              the overall major defect rate from 20% to 10%.
             </p>
             <div class="tags">
-              <span class="tag">Check Sheet</span>
-              <span class="tag">Pareto</span>
-              <span class="tag">Fishbone</span>
-              <span class="tag">5 Whys</span>
+              <span class="tag">7 QC Tools</span>
+              <span class="tag">CAPA</span>
+              <span class="tag">Root Cause</span>
             </div>
           </article>
 
           <article class="project">
             <div class="project-top">
-              <h3>Quality Dashboard</h3>
+              <h3>Master List & Document Control</h3>
               <div class="project-no">PROJECT 03</div>
             </div>
             <p>
-              Developed a quality reporting structure that converts defect
-              records into management-friendly KPIs, supporting visibility of
-              defect quantity, severity, repeat issues and close-out performance.
+              Developed a centralized master list and document control system to
+              improve traceability, revision control and document change logs.
             </p>
             <div class="tags">
-              <span class="tag">Power BI</span>
-              <span class="tag">Excel</span>
-              <span class="tag">KPI</span>
-              <span class="tag">Data Analysis</span>
+              <span class="tag">Master List</span>
+              <span class="tag">Revision Control</span>
+              <span class="tag">Change Log</span>
             </div>
           </article>
 
           <article class="project">
             <div class="project-top">
-              <h3>Document Transition Control</h3>
+              <h3>Power BI Quality Dashboard</h3>
               <div class="project-no">PROJECT 04</div>
             </div>
             <p>
-              Supported improvements to drawing and quality-document revision
-              control, including controlled transitions, impact assessment,
-              record retention and communication of revised documents.
+              Developed an interactive Power BI dashboard for quality KPI and
+              production performance monitoring, using quality data to support
+              management decisions.
             </p>
             <div class="tags">
-              <span class="tag">ISO 9001</span>
-              <span class="tag">Document Control</span>
-              <span class="tag">Revision Control</span>
-              <span class="tag">Change Management</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">DAX</span>
+              <span class="tag">Power Query</span>
             </div>
           </article>
 
           <article class="project">
             <div class="project-top">
-              <h3>CAPA & Repeat Defect Control</h3>
+              <h3>Control Plan & AQL</h3>
               <div class="project-no">PROJECT 05</div>
             </div>
             <p>
-              Structured repeat-defect monitoring and corrective-action
-              follow-up to improve visibility of recurring quality problems and
-              distinguish immediate correction from preventive action.
+              Supported and trained implementation of Control Plan, Acceptance
+              Quality Level and related quality tools for more consistent
+              inspection and process control.
             </p>
             <div class="tags">
-              <span class="tag">CAPA</span>
-              <span class="tag">Root Cause</span>
-              <span class="tag">Repeat Defect</span>
-              <span class="tag">Follow-up</span>
+              <span class="tag">Control Plan</span>
+              <span class="tag">AQL</span>
+              <span class="tag">Training</span>
             </div>
           </article>
 
           <article class="project">
             <div class="project-top">
-              <h3>Quality Reporting</h3>
+              <h3>Reporting & Workflow Standardization</h3>
               <div class="project-no">PROJECT 06</div>
             </div>
             <p>
-              Developed a structured quarterly quality-reporting approach to
-              communicate quality status, key defect trends, production-stage
-              findings and improvement priorities.
+              Standardized quality reporting and process workflows through
+              quarterly reports and flowcharts, improving visibility and
+              consistency across teams.
             </p>
             <div class="tags">
-              <span class="tag">Quality Report</span>
-              <span class="tag">Trend Analysis</span>
-              <span class="tag">Management Report</span>
+              <span class="tag">Quarterly Reports</span>
+              <span class="tag">Flowcharts</span>
+              <span class="tag">Process Improvement</span>
             </div>
           </article>
 
@@ -871,51 +903,142 @@
       </div>
     </section>
 
-    <!-- METRICS -->
     <section class="metrics">
       <div class="container">
         <div class="section-header">
-          <div class="section-number">04 / Impact</div>
+          <div class="section-number">04 / Snapshot</div>
           <div>
-            <h2 class="section-title">Quality improvement backed by data.</h2>
+            <h2 class="section-title">A concise professional profile.</h2>
             <p class="section-intro" style="margin-top:20px;">
-              Example portfolio metrics based on project scale. Replace these
-              with your verified figures before publishing.
+              Key facts drawn directly from the CV.
             </p>
           </div>
         </div>
 
         <div class="metrics-grid">
           <div class="metric">
+            <strong>20% -> 10%</strong>
+            <span>Overall major defect rate reduction</span>
+          </div>
+          <div class="metric">
             <strong>5</strong>
-            <span>Core PFMEA project team members</span>
+            <span>Member team led on short-term quality projects</span>
           </div>
           <div class="metric">
-            <strong>43+</strong>
-            <span>Initial quality cases reviewed in PFMEA pilot</span>
+            <strong>2023-2026</strong>
+            <span>Senior QA experience at Corsair Marine International</span>
           </div>
           <div class="metric">
-            <strong>7</strong>
-            <span>Vessels represented in a quarterly quality report</span>
-          </div>
-          <div class="metric">
-            <strong>300+</strong>
-            <span>Defect records analyzed in a quality reporting period</span>
+            <strong>N4</strong>
+            <span>Japanese certification listed from 2025, with N3 in progress</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <section id="credentials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-number">05 / Credentials</div>
+          <div>
+            <h2 class="section-title">Certificates and recognition.</h2>
+            <p class="section-intro" style="margin-top:20px;">
+              Verified training and achievement records showing continued
+              development in quality management, internal auditing, human
+              resources administration and Japanese language learning.
+            </p>
+          </div>
+        </div>
+
+        <div class="credentials-grid">
+          <article class="credential-card">
+            <a href="https://drive.google.com/file/d/16KyKcCZG90XdVu1PSmvMkriGlRr2NG4t/view?usp=sharing" target="_blank" rel="noopener">
+              <img src="https://drive.google.com/thumbnail?id=16KyKcCZG90XdVu1PSmvMkriGlRr2NG4t&amp;sz=w1200" alt="BSI ISO 9001:2015 Awareness and Internal Auditor certificate for Pham Thi Ngan Kieu" />
+            </a>
+            <div class="credential-body">
+              <h3>ISO 9001:2015 Awareness & Internal Auditor</h3>
+              <p>
+                BSI Training Academy certificate for Awareness and Internal
+                Auditor of ISO 9001:2015, completed 08-10 Apr 2026.
+              </p>
+              <div class="tags">
+                <span class="tag">BSI Training Academy</span>
+                <span class="tag">ISO 9001:2015</span>
+                <span class="tag">Internal Audit</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="credential-card">
+            <a href="https://drive.google.com/file/d/1BsEwMo9j3Zhoqp8yUrpUM1mAsnE1zoV0/view?usp=sharing" target="_blank" rel="noopener">
+              <img src="https://drive.google.com/thumbnail?id=1BsEwMo9j3Zhoqp8yUrpUM1mAsnE1zoV0&amp;sz=w1200" alt="New Best Employee Year 2024 certificate presented to Pham Thi Ngan Kieu" />
+            </a>
+            <div class="credential-body">
+              <h3>New Best Employee, Year 2024</h3>
+              <p>
+                Recognition certificate presented by Corsair Marine
+                International and Seawind Catamarans for contribution to CMI
+                over the years, dated 17 Jan 2025.
+              </p>
+              <div class="tags">
+                <span class="tag">Employee Recognition</span>
+                <span class="tag">CMI</span>
+                <span class="tag">2024</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="credential-card">
+            <a href="https://drive.google.com/file/d/1tqcfUz2qnpi3lmA77kgee5h1PLmRXAdT/view?usp=sharing" target="_blank" rel="noopener">
+              <img src="https://drive.google.com/thumbnail?id=1tqcfUz2qnpi3lmA77kgee5h1PLmRXAdT&amp;sz=w1200" alt="Dong Du Japanese N5 certificate for Pham Thi Ngan Kieu" />
+            </a>
+            <div class="credential-body">
+              <h3>Japanese Language Certification</h3>
+              <p>
+                Passed the Dong Du N5 Japanese proficiency exam on 18 Oct 2024
+                with a total score of 377/450. The corrected CV also lists N4
+                Japanese from 2025 and N3 Japanese in progress.
+              </p>
+              <div class="tags">
+                <span class="tag">Dong Du Japanese School</span>
+                <span class="tag">N5</span>
+                <span class="tag">377/450</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="credential-card">
+            <a href="https://drive.google.com/file/d/1MQL8p8j2_Yd7i0zrCuujKBc39PVCjV0v/view?usp=sharing" target="_blank" rel="noopener">
+              <img src="https://drive.google.com/thumbnail?id=1MQL8p8j2_Yd7i0zrCuujKBc39PVCjV0v&amp;sz=w1200" alt="Le Anh Professional HR Admin training certificate for Pham Thi Ngan Kieu" />
+            </a>
+            <div class="credential-body">
+              <h3>Professional HR Admin Training</h3>
+              <p>
+                Certificate of training from Le Anh Practical Training Center
+                for the Professional HR Admin course, completed 05 Jan-20 Apr
+                2024 and issued 22 Apr 2024.
+              </p>
+              <div class="tags">
+                <span class="tag">Le Anh Center</span>
+                <span class="tag">HR Administration</span>
+                <span class="tag">Training Certificate</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="expertise">
       <div class="container">
         <div class="section-header">
-          <div class="section-number">05 / Skills</div>
+          <div class="section-number">06 / Skills</div>
           <div>
             <h2 class="section-title">Core capabilities.</h2>
             <p class="section-intro" style="margin-top:20px;">
-              A balance of quality-system knowledge, analytical thinking,
-              documentation and practical production coordination.
+              Technical QA/QMS capability supported by data analytics,
+              structured problem solving, process improvement and
+              cross-functional coordination.
             </p>
           </div>
         </div>
@@ -924,49 +1047,66 @@
 
           <div>
             <div class="skill-row">
-              <div class="skill-head"><span>Quality Assurance / QC</span><span>Advanced</span></div>
+              <div class="skill-head"><span>QA/QMS & Document Control</span><span>Advanced</span></div>
               <div class="bar"><i style="width:90%"></i></div>
             </div>
 
             <div class="skill-row">
-              <div class="skill-head"><span>QMS / ISO 9001</span><span>Advanced</span></div>
-              <div class="bar"><i style="width:85%"></i></div>
+              <div class="skill-head"><span>PFMEA, CAPA & Control Plan</span><span>Advanced</span></div>
+              <div class="bar"><i style="width:86%"></i></div>
             </div>
 
             <div class="skill-row">
-              <div class="skill-head"><span>Document Control</span><span>Advanced</span></div>
-              <div class="bar"><i style="width:90%"></i></div>
+              <div class="skill-head"><span>Power BI & Quality Data</span><span>Advanced</span></div>
+              <div class="bar"><i style="width:84%"></i></div>
             </div>
 
             <div class="skill-row">
-              <div class="skill-head"><span>Root Cause Analysis</span><span>Advanced</span></div>
-              <div class="bar"><i style="width:85%"></i></div>
+              <div class="skill-head"><span>Process Improvement</span><span>Advanced</span></div>
+              <div class="bar"><i style="width:84%"></i></div>
             </div>
 
             <div class="skill-row">
-              <div class="skill-head"><span>Quality Data Analysis</span><span>Intermediate–Advanced</span></div>
+              <div class="skill-head"><span>ISO 9001 Internal Audit</span><span>Trained</span></div>
               <div class="bar"><i style="width:78%"></i></div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-head"><span>English</span><span>Good</span></div>
+              <div class="bar"><i style="width:75%"></i></div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-head"><span>Japanese</span><span>Intermediate / N4</span></div>
+              <div class="bar"><i style="width:70%"></i></div>
             </div>
           </div>
 
           <div>
             <div class="tool-list">
+              <span class="tool">Microsoft Office</span>
+              <span class="tool">ISO 9001:2015</span>
               <span class="tool">PFMEA</span>
               <span class="tool">CAPA</span>
-              <span class="tool">8D</span>
-              <span class="tool">5 Whys</span>
-              <span class="tool">Fishbone</span>
-              <span class="tool">Pareto</span>
               <span class="tool">Control Plan</span>
-              <span class="tool">ITP</span>
+              <span class="tool">5 Why</span>
+              <span class="tool">Ishikawa</span>
+              <span class="tool">Pareto Chart</span>
               <span class="tool">AQL</span>
               <span class="tool">Power BI</span>
-              <span class="tool">Microsoft Excel</span>
-              <span class="tool">SQL / PostgreSQL</span>
+              <span class="tool">DAX</span>
+              <span class="tool">Power Query</span>
+              <span class="tool">Excel</span>
+              <span class="tool">Draw.io</span>
+              <span class="tool">ERP</span>
               <span class="tool">SharePoint</span>
-              <span class="tool">Document Revision Control</span>
-              <span class="tool">Quality Reporting</span>
-              <span class="tool">Internal Audit Support</span>
+              <span class="tool">Internal Audit</span>
+              <span class="tool">Root Cause Analysis</span>
+              <span class="tool">Process Improvement</span>
+              <span class="tool">Analytical Thinking</span>
+              <span class="tool">Project Management</span>
+              <span class="tool">Cross-functional Collaboration</span>
+              <span class="tool">Japanese N4</span>
             </div>
           </div>
 
@@ -974,70 +1114,67 @@
       </div>
     </section>
 
-    <!-- EDUCATION / VALUES -->
     <section>
       <div class="container">
         <div class="section-header">
-          <div class="section-number">06 / Profile</div>
+          <div class="section-number">07 / Education</div>
           <div>
-            <h2 class="section-title">A structured and practical way of working.</h2>
+            <h2 class="section-title">Legal foundation with quality and language development.</h2>
           </div>
         </div>
 
         <div class="two-col">
           <article class="info-card">
-            <h3>Quality Mindset</h3>
+            <h3>Open University of HCM City</h3>
             <p>
-              Focus on prevention rather than simply detecting defects after
-              production. Good quality control should be understandable,
-              traceable and practical for the people using it.
+              Bachelor of Law, 2021.
             </p>
           </article>
 
           <article class="info-card">
-            <h3>Data-Driven Improvement</h3>
+            <h3>Human Resources Administration</h3>
             <p>
-              Use quality records to identify patterns, prioritize problems and
-              support decisions instead of relying only on isolated observations.
+              Human Resources Administration certification listed in the CV
+              from 2022, with supporting Le Anh training certificate issued in
+              April 2024.
             </p>
           </article>
 
           <article class="info-card">
-            <h3>Continuous Learning</h3>
+            <h3>Language Skills</h3>
             <p>
-              Continuously developing skills in quality systems, data analysis,
-              SQL, reporting and Japanese language learning.
+              Vietnamese native speaker. English: good. Japanese: intermediate,
+              with N4 listed from 2025 and N3 currently in progress.
             </p>
           </article>
 
           <article class="info-card">
-            <h3>Cross-Functional Collaboration</h3>
+            <h3>Quality Development</h3>
             <p>
-              Work across QA/QC, Production and Technical/Design functions to
-              connect quality requirements with actual production activities.
+              ISO 9001:2015 Quality Management Systems Awareness and Internal
+              Auditor training completed through BSI Training Academy in 2026.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="contact">
       <div class="container contact-box">
         <div>
-          <div class="section-number">07 / Contact</div>
-          <h2>Let's talk about quality.</h2>
+          <div class="section-number">08 / Contact</div>
+          <h2>Contact Pham Thi Ngan Kieu.</h2>
           <p>
-            Interested in QA/QC, QMS, quality improvement, document control or
-            data-driven quality roles? Feel free to get in touch.
+            Available for QA, QMS, process improvement, document control,
+            quality reporting and data-driven quality management opportunities.
           </p>
         </div>
 
         <div class="contact-details">
-          <!-- Replace these placeholders with your actual contact information -->
-          <a href="mailto:your.email@example.com">your.email@example.com</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn Profile</a>
-          <a href="#top">Back to top ↑</a>
+          <a href="mailto:ngankieupham.1199@gmail.com">ngankieupham.1199@gmail.com</a>
+          <a href="tel:+84963286290">0963.286.290</a>
+          <span>Tang Nhon Phu W, Ho Chi Minh City</span>
+          <a href="#top">Back to top &uarr;</a>
         </div>
       </div>
     </section>
@@ -1046,8 +1183,8 @@
 
   <footer>
     <div class="container">
-      <span>© 2026 Senior QA Officer Portfolio</span>
-      <span>Quality Assurance · QMS · Continuous Improvement</span>
+      <span>&copy; 2026 Pham Thi Ngan Kieu</span>
+      <span>QMS-QA-Process Improvement &middot; PFMEA &middot; Power BI</span>
     </div>
   </footer>
 
